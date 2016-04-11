@@ -56,6 +56,12 @@ end
 if msg.text == "چیکارمیکنی" then
   return "والله حقیقتش هیچی"
 end
+if msg.text == "ربات" then
+  return "جانم بگو؟"
+end
+if msg.text == "هیچی" then
+  return "کیری کوونت میخاره صدامیکنی پس دیوث"
+end
 if msg.text == "انونیموس" then
   return "کونده چیکار بابام داری؟"
 end
@@ -120,6 +126,8 @@ return {
     "^bk$",
     "^به کیرم$",
     "^وااااخ$",
+    "^ربات$",
+    "^هیچی$",
     }, 
   run = run,
   pre_process = pre_process
