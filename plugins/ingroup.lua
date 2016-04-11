@@ -60,7 +60,7 @@ local function check_member_realm_add(cb_extra, success, result)
           flood = 'yes',
 	  lock_link = 'yes',
 	  sticker = 'ok',
-	  version = '3.0',
+	  version = '4.1',
 	  groupmodel = 'normal',
 	  tag = 'no',
 	  lock_badw = 'no',
@@ -103,7 +103,7 @@ function check_member_group(cb_extra, success, result)
           flood = 'yes',
 	  lock_link = 'yes',
 	  sticker = 'ok',
-	  version = '3.0',
+	  version = '4.1',
 	  groupmodel = 'normal',
 	  tag = 'no',
 	  lock_badw = 'no',
@@ -1451,7 +1451,7 @@ local function run(msg, matches)
         return "اول با لینک جدید یک  لینک جدید بسازید"
       end
        savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-      return "لینک گروه:\nتـــــــــــαπσπφ๓σϑζـــــیــــم\n"..group_link
+      return "لینک گروه:\n💔تـــــــــــαπσπφ๓σϑζـــــیــــم💔\n"..group_link
     end
       if matches[1] == 'لینک خصوصی' or matches[1] == 'linkpv' then
       if not is_momod(msg) then
@@ -1462,7 +1462,7 @@ local function run(msg, matches)
         return "اول با لینک جدید یک لینک جدید بسازید"
       end
        savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-     send_large_msg('user#id'..msg.from.id, "لینک گروه:\nتــــــــαπσπφ๓σϑζـــیـــم\n"..group_link)
+     send_large_msg('user#id'..msg.from.id, "لینک گروه:\n💔تــــــــαπσπφ๓σϑζـــیـــم💔\n"..group_link)
     end
     if matches[1] == 'دارنده' or matches[1] == 'setleader' and matches[2] then
       if not is_owner(msg) then
