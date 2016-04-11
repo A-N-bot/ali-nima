@@ -25,7 +25,7 @@ local function list_filter(msg)
   local hash = get_filter_hash(msg)
   if hash then
     local names = redis:hkeys(hash)
-    local text = 'لیست کلمات فیلتر شده:\n______________________________\n'
+    local text = 'لیست کلمات فیلتر شده:\n__________απσπφ๓σϑζ___________\n'
     for i=1, #names do
       text = text..'> '..names[i]..'\n'
     end
