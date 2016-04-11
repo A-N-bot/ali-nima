@@ -17,17 +17,17 @@ local function check_member_autorealm(cb_extra, success, result)
           lock_photo = 'no',
           lock_member = 'no',
           flood = 'yes',
-	  lock_link = 'yes',
-	  sticker = 'ok',
-	  version = '4.1',
-	  groupmodel = 'normal',
-	  tag = 'no',
-	  lock_badw = 'no',
-	  lock_english = 'no',
-	  lock_join = 'no',
-	  lock_media = 'no',
-	  lock_share = 'no',
-	  welcome = 'group'
+		  lock_link = 'yes',
+		  sticker = 'ok',
+		  version = '3.0',
+		  groupmodel = 'normal',
+		  tag = 'no',
+		  lock_badw = 'no',
+		  lock_english = 'no',
+		  lock_join = 'no',
+		  lock_media = 'no',
+		  lock_share = 'no',
+		  welcome = 'group'
         }
       }
       save_data(_config.moderation.data, data)
@@ -58,17 +58,17 @@ local function check_member_realm_add(cb_extra, success, result)
           lock_photo = 'no',
           lock_member = 'no',
           flood = 'yes',
-	  lock_link = 'yes',
-	  sticker = 'ok',
-	  version = '4.1',
-	  groupmodel = 'normal',
-	  tag = 'no',
-	  lock_badw = 'no',
-	  lock_english = 'no',
-	  lock_join = 'no',
-	  lock_media = 'no',
-	  lock_share = 'no',
-	  welcome = 'group'
+		  lock_link = 'yes',
+		  sticker = 'ok',
+		  version = '3.0',
+		  groupmodel = 'normal',
+		  tag = 'no',
+		  lock_badw = 'no',
+		  lock_english = 'no',
+		  lock_join = 'no',
+		  lock_media = 'no',
+		  lock_share = 'no',
+		  welcome = 'group'
         }
       }
       save_data(_config.moderation.data, data)
@@ -101,17 +101,17 @@ function check_member_group(cb_extra, success, result)
           lock_photo = 'no',
           lock_member = 'no',
           flood = 'yes',
-	  lock_link = 'yes',
-	  sticker = 'ok',
-	  version = '4.1',
-	  groupmodel = 'normal',
-	  tag = 'no',
-	  lock_badw = 'no',
-	  lock_english = 'no',
-	  lock_join = 'no',
-	  lock_media = 'no',
-	  lock_share = 'no',
-	  welcome = 'group'
+		  lock_link = 'yes',
+		  sticker = 'ok',
+		  version = '3.0',
+		  groupmodel = 'normal',
+		  tag = 'no',
+		  lock_badw = 'no',
+		  lock_english = 'no',
+		  lock_join = 'no',
+		  lock_media = 'no',
+		  lock_share = 'no',
+		  welcome = 'group'
         }
       }
       save_data(_config.moderation.data, data)
@@ -144,17 +144,17 @@ local function check_member_modadd(cb_extra, success, result)
           lock_photo = 'no',
           lock_member = 'no',
           flood = 'yes',
-	  lock_link = 'yes',
-	  sticker = 'ok',
-	  version = '4.1',
-	  groupmodel = 'normal',
-	  tag = 'no',
-	  lock_badw = 'no',
-	  lock_english = 'no',
-	  lock_join = 'no',
-	  lock_media = 'no',
-	  lock_share = 'no',
-	  welcome = 'group'
+		  lock_link = 'yes',
+		  sticker = 'ok',
+		  version = '3.0',
+		  groupmodel = 'normal',
+		  tag = 'no',
+		  lock_badw = 'no',
+		  lock_english = 'no',
+		  lock_join = 'no',
+		  lock_media = 'no',
+		  lock_share = 'no',
+		  welcome = 'group'
         }
       }
       save_data(_config.moderation.data, data)
@@ -292,19 +292,7 @@ local function show_group_settingsmod(msg, data, target)
     	welcome = data[tostring(msg.to.id)]['settings']['welcome']
    	end
   local settings = data[tostring(target)]['settings']
-  local text = "💡تنظیمات گروه💡:
-\n💡قفل نام گروه : 
-"..settings.lock_name.."\n💡قفل عکس گروه : 
-"..settings.lock_photo.."\n💡قفل اعضا : 
-"..settings.lock_member.."\n💡ممنوعیت ارسال لینک : 
-"..lock_link.."\n💡قفل ورود : 
-"..lock_join.."\n💡قفل رسانه : 
-"..lock_media.."\n💡قفل اشتراک گذاری : "..lock_share.."\n💡حساسیت اسپم : "..NUM_MSG_MAX.."\n💡قفل ربات ها : "..bots_protection.."\n💡خوشامد : 
-"..welcome.."\n💡قفل تگ : 
-"..tag.."\n>قفل اینگلیسی :
-"..lock_english.."\n💡قفل فحش : 
-"..lock_badw.."\n💡مدل گروه : 
-"..groupmodel.."\n💡ورژن : "..version
+  local text = "تنظیمات گروه:\n⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙\n>قفل نام گروه : "..settings.lock_name.."\n>قفل عکس گروه : "..settings.lock_photo.."\n>قفل اعضا : "..settings.lock_member.."\n>ممنوعیت ارسال لینک : "..lock_link.."\n>قفل ورود : "..lock_join.."\n>قفل رسانه : "..lock_media.."\n>قفل اشتراک گذاری : "..lock_share.."\n>حساسیت اسپم : "..NUM_MSG_MAX.."\n>قفل ربات ها : "..bots_protection.."\n>خوشامد : "..welcome.."\n>قفل تگ : "..tag.."\n>قفل اینگلیسی :"..lock_english.."\n>قفل فحش : "..lock_badw.."\n>مدل گروه : "..groupmodel.."\n>ورژن : "..version
   return text
 end
 
@@ -1451,7 +1439,7 @@ local function run(msg, matches)
         return "اول با لینک جدید یک  لینک جدید بسازید"
       end
        savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-      return "لینک گروه:\n💔تـــــــــــαπσπφ๓σϑζـــــیــــم💔\n"..group_link
+      return "لینک گروه:\n🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷\n"..group_link
     end
       if matches[1] == 'لینک خصوصی' or matches[1] == 'linkpv' then
       if not is_momod(msg) then
@@ -1462,7 +1450,7 @@ local function run(msg, matches)
         return "اول با لینک جدید یک لینک جدید بسازید"
       end
        savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-     send_large_msg('user#id'..msg.from.id, "لینک گروه:\n💔تــــــــαπσπφ๓σϑζـــیـــم💔\n"..group_link)
+     send_large_msg('user#id'..msg.from.id, "لینک گروه:\n🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷\n"..group_link)
     end
     if matches[1] == 'دارنده' or matches[1] == 'setleader' and matches[2] then
       if not is_owner(msg) then
