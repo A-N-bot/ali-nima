@@ -1439,7 +1439,7 @@ local function run(msg, matches)
         return "اول با لینک جدید یک  لینک جدید بسازید"
       end
        savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-      return "لینک گروه:\n🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷🤖🇮🇷\n"..group_link
+      return "لینک گروه:\nتـــــــــــαπσπφ๓σϑζـــــیــــم\n"..group_link
     end
       if matches[1] == 'لینک خصوصی' or matches[1] == 'linkpv' then
       if not is_momod(msg) then
