@@ -24,7 +24,7 @@ end
 
 return {
    patterns = {
-"^[/!](aparat) (.*)$",
+"^(اپارات) (.*)$",
    },
    run = run
 }
