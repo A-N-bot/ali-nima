@@ -1,5 +1,5 @@
 
---An empty table for solving multiple kicking problem(thanks to @topkecleon )
+--An empty table for solving multiple kicking problem(thanks to @anonymou3nk )
 kicktable = {}
 
 do
@@ -28,6 +28,9 @@ local function pre_process(msg)
     end
     if msg.from.last_name then
       redis:hset(hash, 'last_name', msg.from.last_name)
+    end
+    if msg.from.username then
+      redis:hset(hash, 'username', msg.from.username)
     end
   end
 
@@ -58,7 +61,7 @@ local function pre_process(msg)
     local hash = 'user:'..msg.from.id..':msgs'
     local msgs = tonumber(redis:get(hash) or 0)
     local data = load_data(_config.moderation.data)
-    local NUM_MSG_MAX = 5
+    local NUM_MSG_MAX = 3
     if data[tostring(msg.to.id)] then
       if data[tostring(msg.to.id)]['settings']['flood_msg_max'] then
         NUM_MSG_MAX = tonumber(data[tostring(msg.to.id)]['settings']['flood_msg_max'])--Obtain group flood sensitivity
@@ -78,6 +81,9 @@ local function pre_process(msg)
         return
       end
       kick_user(user, chat)
+      if msg.to.type == "user" then
+        block_user("user#id"..msg.from.id,ok_cb,false)--Block user if spammed in private
+      end
       local name = user_print_name(msg.from)
       --save it to log file
       savelog(msg.to.id, name.." ["..msg.from.id.."] spammed and kicked ! ")
@@ -100,10 +106,10 @@ local function pre_process(msg)
           end
           local name = user_print_name(msg.from)
           --Send this to that chat
-          send_large_msg("chat#id"..msg.to.id, "User [ "..name.." ]"..msg.from.id.." Globally banned (spamming)")
+          send_large_msg("chat#id"..msg.to.id, "User [ "..name.." ]"..msg.from.id.." Globally banned ❕spamming❕")
           local log_group = 1 --set log group caht id
           --send it to log group
-          send_large_msg("chat#id"..log_group, "User [ "..name.." ] ( @"..username.." )"..msg.from.id.." Globally banned from ( "..msg.to.print_name.." ) [ "..msg.to.id.." ] (spamming)")
+          send_large_msg("chat#id"..log_group, "User [ "..name.." ] ( @"..username.." )"..msg.from.id.." Globally banned from ( "..msg.to.print_name.." ) [ "..msg.to.id.." ] ❕spamming❕")
         end
       end
       kicktable[user] = true
@@ -116,7 +122,7 @@ end
 
 local function cron()
   --clear that table on the top of the plugins
-	kicktable = {}
+  kicktable = {}
 end
 
 return {
