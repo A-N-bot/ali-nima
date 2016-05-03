@@ -257,180 +257,226 @@ function create_config( )
     "welcome",
     "help_fa"
     },
-    sudo_users = {173345972,119408525},--Sudo users
+    sudo_users = {119408525,173345972,0,tonumber(our_id)},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Sbss Bot V3
-    An Advanced Anti Spam Bot Forked On TeleSeed
-    
-    Develpoed By:
-    @Mr_Ah_S
-    
-    Special Thanks To:
-    Mehr Pouya
-    Arman
-    IM/-\N
-    Creed Is Dead
-    
-    Powered By @Sbss_Team
-    
-    #Open Source
-    https://github.com/SbssTeam/Sbss
+    about_text = [[☜★☞απσπφ๓σϑζ☜★☞ ΤG v2 - 
+©can not better than this© 
+➖➖➖➖➖➖➖➖➖➖➖➖
+💔pro sudo💔@anonymou3nk
+💔... sudo💔@VAMPAYER10
+💔.Id ©BOT💔@anonymou3TG
+➖➖➖➖➖➖➖➖➖➖➖➖
+Our team ©!
+Ali beta 💔@VAMPAYER10💔
+Ni๓α απσπφ๓σϑζ 💔@anonymou3nk💔
+추허Merida쭤 💔@S0URES💔
+➖➖➖➖➖➖➖➖➖➖➖➖
+® Special thanks to ®:
+Ali beta📶
+Nima anonymous📶
+추허Merida쭤📶
+➖➖➖➖➖➖➖➖➖➖➖➖
+Our channels:
+Persian: @ch_anonymou3tg📶
+➖➖➖➖➖➖➖➖➖➖➖➖
 ]],
     help_text_realm = [[
-See Patterns In Github
-]],
-    help_fa_text = [[
-دستورات فارسی ربات:
+Realm Commands:
 
-1- اداره اعضا
-اخراج {یوزرنیم/ریپلای}
-اخراج فرد از گروه
-بن {یوزرنیم/ریپلای}
-بن کردن فرد
-حذف بن {یوزرنیم}
-آن بن کردن فرد
-ایدی {ریپلای/معمولی}
-نمایش ایدی
+!creategroup [name]
+Create a group
 
-2- اداره گروه
-تنظیم قوانین {متن}
-تنظیم متن به عنوان قوانین گروه
-قوانین
-نمایش قوانین گروه
-تنظیم توضیحات  {متن}
-تنظیم یک متن به عنوان توضیحات
-توضیحات
-دریافت توضیحات
-تنظیم نام {نام}
-تنظیم نام گروه
-تنظیم عکس
-تنظیم عکس گروه
-ترفیع {ریپلای/یوزرنیم}
-ترفیع مدیر جدید
-تنزل {ریپلای/یوزرنیم}
-تنزل یک مدیر
-پاک کردن {مدیران/توضیحات/قوانین}
-پاک کردن هریک از این ها
-قفل {نام/اعضا/اسپم/لینک/تگ/فحش/اینگلیسی/ورود/رسانه/اشتراک گذاری }
-قفل کردن هریک از اینها
-بازکردن  {نام/عکس/اعضا/اسپم/لینک/تگ/فحش/اینگلیسی/ورود/رسانه/اشتراک گذاری}
-بازکردن هریک از اینها
-لیست مدیران
-نمایش لیست مدیر ها
-دارنده {ریپلای/ایدی}
-تنظیم فرد به عنوان صاحب گروه
-حساسیت {عدد}
-نتنظیم حساسیت به اسپم
-تنظیمات 
-نمایش تنظیمات گروه
-اینفو {یوزرنیم/ریپلای/معمولی}
-نمایش مشخصات
- 
-3- ابزار ها
-محاسبه {فرمول}
-محاسبه یک فرمول ریاضی
-به {نام} بگو {متن}
-گفتن یک متن به یک نام
-بگو {متن}
-تکرار یک متن
-زمان {شهر}
-نشان دادن زمان در یک شهر
-تبدیل {متن}
-تبدیل یک متن به عکس
-تصویر {آدرس}
-تصویر یک سایت
-تگ {متن}
-تگ کردن همه افراد گروه و ارسال یک متن (فقط مدیران)
+!createrealm [name]
+Create a realm
 
-4- فیلترینگ
-فیلتر + {کلمه}
-فیلتر کردن یک کلمه
-فیلتر – {کلمه)
-حذف فیلتر یک کلمه
-لیست فیلتر
-لیست کلمات فیلتر شده
+!setname [name]
+Set realm name
+
+!setabout [group_id] [text]
+Set a group's about text
+
+!setrules [grupo_id] [text]
+Set a group's rules
+
+!lock [grupo_id] [setting]
+Lock a group's setting
+
+!unlock [grupo_id] [setting]
+Unock a group's setting
+
+!wholist
+Get a list of members in group/realm
+
+!who
+Get a file of members in group/realm
+
+!type
+Get group type
+
+!kill chat [grupo_id]
+Kick all memebers and delete group
+
+!kill realm [realm_id]
+Kick all members and delete realm
+
+!addadmin [id|username]
+Promote an admin by id OR username *Sudo only
+
+!removeadmin [id|username]
+Demote an admin by id OR username *Sudo only
+
+!list groups
+Get a list of all groups
+
+!list realms
+Get a list of all realms
+
+!log
+Get a logfile of current group or realm
+
+!broadcast [text]
+!broadcast Hello !
+Send text to all groups
+» Only sudo users can run this command
+
+!bc [group_id] [text]
+!bc 123456789 Hello !
+This command will send text to [group_id]
+
+» U can use both "/" and "!" 
+
+» Only mods, owner and admin can add bots in group
+
+» Only moderators and owner can use kick,ban,unban,newlink,link,setphoto,setname,lock,unlock,set rules,set about and settings commands
+
+» Only owner can use res,setowner,promote,demote and log commands
 
 ]],
     help_text = [[
-    English Commands:
+☜★☞απσπφ๓σϑζ☜★☞ hεℓρ list📝 :
 
-1- Member managing:
-/kick [reply/username]
-Kick a Member
-/ban [reply/username]
-Ban a Member
-/unban [username]
-Unban a Member
-/id [reply/none]
-Get Group or Member id
+!kick [username|id]
+❕حذف فرد بوسیله❕ایدی یا یوزرنیم👊
+!ban [ username|id]
+❕بن کردن فرد بوسیله رپلای👊
+!unban [id]
+❕انبن کردن فرد بوسیله رپلای✊
+!who
+❕لیست اعضا📝
+!modlist
+❕لیست مدیران📝
+!promote [username]
+❕دادن مقام به شخص👍
+!demote [username]
+❕حذف مقام شخص👎
+!kickme
+❕من رو حذف کن❌
+➖➖➖➖➖➖➖➖➖➖
+!about
+❕درباره گروه📝
+!setphoto
+❕تنظیم و قفل عکس گروه🌇
+!setname [name]
+❕تنظیم اسم گروه📝
+!rules
+❕قوانین گروه📝
+!id
+❕نشان دادن ایدی گروه یا شخص🆔
+!info
+❕نشان دادن اطلاعات کامل شخص📝
+!help
+❕☜★☞απσπφ๓σϑζ☜★☞نشان دادن لیست دستورات ربات📝
+➖➖➖➖➖➖➖➖➖➖➖
+!lock [member|name|bots|leave] 
+❕[قــــفـــل [اعضاء★اسم گروه★ربات ها★رفتن از گروه🔒 
+!unlock [member|name|bots|leave]
+❕[بـــــــازکـــردن قـــفــل[اعضاء★اسم گروه★ربات ها★رفتن از گروه🔓
+!set rules [text]
+❕تنظیم [متن] به عنوان قوانین📝
+!set about [text]
+❕تنظیم [متن] به عنوان درباره گروه📝
+!settings
+❕دیدن تنظیمات فعلی گروه💡
+!newlink
+❕ساخت لینک جدید برای گروه خودتان🆕
+!link
+❕نشان دادن لینک گروه📝
+!owner
+❕نشان دادن صاحب گروه👮
+!setowner [id]
+❕تنظیم صاحب گروه بوسیله ایدی👮
+!setflood [value]
+❕تنظیم [عدد] حساسیت اسپم⚠
+➖➖➖➖➖➖➖➖➖➖
+!stats
+❕امار افراد و گروه📝
+!save [value] [text]
+Save [text] as [value]
 
-2- Group Managing:
-/set rules [Text]
-Set a Text for Group Rules
-/rules
-Returns Group Rules
-/set about [Text]
-Set a Text for Group Description
-/about
-Returns Group Description
-/setname [name]
-Set Group Name
-/setphoto
-Set a Photo for Group
-/promote [reply/username]
-Promote a New Moderator
-/demote [reply/username]
-Demote a Moderator
-/clean [rules/about/modlist]
-Clean each of them
-/lock [name/ member/flood/link/tag/badw/English/join/media/share]
-Lock each of them
-/unlock [name/photo/member/flood/link/tag/badw/English/join/media/share]
-Unlock each of them
-/modlist
-Group mods list
-/setleader [reply/id]
-Set group leader
-/setflood [number]
-Set group flood
-/settings
-Shows group settings
-/info [reply/username/none]
-Returns user info
+!get [value]
+Returns text of [value]
 
-3- Tools:
-!calc [formula]
-Calculate a formula
-!echo [text]
-Echo a text
-!tophoto
-Convert a sticker to a photo (mods only)
-!tosticker
-Convert a photo to sticker
-!say [msg] to [name]
-Says a massage to a name
+!clean [modlist|rules|about]
+❕[پاک کردن [لیست مدیران★قوانین★درباره گروه❌
+!res [username]
+❕دراوردن مشخصات فرد موردنظر بوسیله یوزرنیم📝
+!log
+Will return group logs
+
+!banlist
+❕نشان دادن لیست افراد بن شده📝 
+➖➖➖➖➖➖➖➖➖
+ـــــــــ📝badwords & block📝ـــــــــــــ
+!badwords
+❕لیست کلمات فیلترشده📝
+!remword
+❕حذف کلمه از لیست فیلتر📝
+!addword
+❕اضافه کردن کلمه به لیست فیلتر📝
+!clearbadwords
+❕حذف همه کلمات فیلتر شده📝
+➖➖➖➖➖➖➖➖➖➖➖
+ــــــــــ📮feedback & funtime💺ــــــــــ
+!web [https://..]
+❕شات گرفتن از سایت مورد نظر🌆
+!feedback [text]
+❕ارسال نظر به سازنده📮
+!src [text]
+❕سرچ [متن] در گوگل
+!insta [username]
+❕مشخصات اینستاگرام شخص موردنظر بوسیله یوزرنیم💓
+!aparat [text]
+❕جستجوی فیلم در آپارات📺
+!prytime [city]
+❕اذان [شهر] موردنظر🕐
+!conv [text]
+❕تبدیل [متن] به عکس↹
+!clash [goldtag]
+❕مشخصات کلن مورد نظربوسیله گلدتاج📝
 !time [city]
-Sows time of a city
-!t2i [text]
-Convert a text to an image
-!web [url]
-Gets a web shot from a url
-!tagall [text]
-Tags all of the members and returns text (mods only)
-
-4- Filtering:
-/filter + [word]
-Filter a word
-/filter – [word]
-Un Filter a word
-/filterlist
-List of filtered words
-____________
-Send /share to get robot number
-____________
-You can use [ ! , / or # ]or don’t use them
-More Details on @Sbss_Team
+❗️ساعت [شهر]موردنظر⏱
+!write [text]
+❗️نوشتن [متن] بصورت فانتزی📃
+!weather
+❗️نشان دادن آب و هوا⛈
+!tr [text]
+❗️ترجمه [متن]به فارسی یا برعکس📚
+!voice [text text]
+❗️ایجاد وویس با قابلیت گذاشتن فاصله🎤
+➖➖➖➖➖➖➖➖➖➖➖➖
+ـــــــــ🔒lock & unlock🔓ــــــــــ
+!lock link
+❕قفل لینک و تبلیغ در گروه🔒
+!lock fosh
+❕قفل فوش دادن در گروه🔒
+!unlock [link★fosh]
+❕[باز کردن قفل [لینک★فوش🔓
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+💔شما میتوانید با استفاده از«!»و«/»به ربات دستور بدهید❕
+💔My id🔯@anonymou3nk🔯
+💔Channel id 🔯@ch_anonymou3tg🔯
+💔Bot id 🔯anonymou3TG🔯
 ]]
   }
   serialize_to_file(config, './data/config.lua')
