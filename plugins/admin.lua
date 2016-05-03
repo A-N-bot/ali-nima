@@ -171,36 +171,39 @@ local function run(msg,matches)
     if matches[1] == "whois" then
       user_info("user#id"..matches[2],user_info_callback,{msg=msg})
     end
+    if matches[1] == "sync_gbans" then
+    	if not is_sudo(msg) then-- Sudo only
+    		return
+    	end
+    	local url = "http://seedteam.org/Teleseed/Global_bans.json"
+    	local SEED_gbans = http.request(url)
+    	local jdat = json:decode(SEED_gbans)
+    	for k,v in pairs(jdat) do
+  		redis:hset('user:'..v, 'print_name', k)
+  		banall_user(v)
+      		print(k, v.." Globally banned")
+    	end
+    end
     return
 end
 return {
   patterns = {
-	"^[#!/](pm) (%d+) (.*)$",
-	"^[#!/](import) (.*)$",
-	"^[#!/](unblock) (%d+)$",
-	"^[#!/](block) (%d+)$",
-	"^[#!/](markread) (on)$",
-	"^[#!/](markread) (off)$",
-	"^[#!/](setbotphoto)$",
+	"^[!/](pm) (%d+) (.*)$",
+	"^[!/](import) (.*)$",
+	"^[!/](unblock) (%d+)$",
+	"^[!/](block) (%d+)$",
+	"^[!/](markread) (on)$",
+	"^[!/](markread) (off)$",
+	"^[!/](setbotphoto)$",
 	"%[(photo)%]",
-	"^[#!/](contactlist)$",
-	"^[#!/](dialoglist)$",
-	"^[#!/](delcontact) (%d+)$",
-	"^[#!/](whois) (%d+)$",
-	"^(pm) (%d+) (.*)$",
-	"^(import) (.*)$",
-	"^(unblock) (%d+)$",
-	"^(block) (%d+)$",
-	"^(markread) (on)$",
-	"^(markread) (off)$",
-	"^(setbotphoto)$",
-	"^(addcontact) (%d+) (.+) (.*)",
-	"^(contactlist)$",
-	"^(dialoglist)$",
-	"^(delcontact) (%d+)$",
-	"^(whois) (%d+)$"
+	"^[!/](contactlist)$",
+	"^[!/](dialoglist)$",
+	"^[!/](delcontact) (%d+)$",
+        "^[!/](addcontact) (.*) (.*) (.*)$",
+	"^[!/](whois) (%d+)$",
+	"^/(sync_gbans)$"--sync your global bans with seed
   },
   run = run,
 }
---By @imandaneshi :)
---https://github.com/SEEDTEAM/TeleSeed/blob/master/plugins/admin.lua
+--By @anonymou3nk :)
+--Nima anonymous
