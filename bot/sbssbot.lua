@@ -263,14 +263,14 @@ function create_config( )
     about_text = [[☜★☞απσπφ๓σϑζ☜★☞ ΤG v2 - 
 ©can not better than this© 
 ➖➖➖➖➖➖➖➖➖➖➖➖
-💔pro sudo💔@anonymou3nk
-💔... sudo💔@VAMPAYER10
-💔.Id ©BOT💔@anonymou3TG
+💔pro sudo💔 @anonymou3nk
+💔... sudo💔 @VAMPAYER10
+💔.Id ©BOT💔 @anonymou3TG
 ➖➖➖➖➖➖➖➖➖➖➖➖
 Our team ©!
-Ali beta 💔@VAMPAYER10💔
-Ni๓α απσπφ๓σϑζ 💔@anonymou3nk💔
-추허Merida쭤 💔@S0URES💔
+Ali beta 💔 @VAMPAYER10💔
+Ni๓α απσπφ๓σϑζ 💔 @anonymou3nk💔
+추허Merida쭤 💔 @S0URES💔
 ➖➖➖➖➖➖➖➖➖➖➖➖
 ® Special thanks to ®:
 Ali beta📶
